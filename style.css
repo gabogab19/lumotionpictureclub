@@ -1,0 +1,683 @@
+/* --- COLOR PALETTE --- */
+:root {
+  --bg-dark: #0b0014;
+  --deep-purple: #2a0a50;
+  --light-purple: #7a41c2;
+  --accent: #c873ff;
+  --text-light: #f0e6ff;
+}
+
+/* GLOBAL */
+body {
+  margin: 0;
+  font-family: "Helvetica", sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-light);
+}
+
+h1, h2, h3 {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: "Sansita", sans-serif;
+  font-weight: 700;
+}
+
+/* HEADER */
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  background: rgba(15, 0, 30, 0.25);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 10px;
+}
+
+.header-logo-container {
+  display: flex;
+  justify-content: center; /* CENTER LOGO */
+  margin-bottom: 3px;
+}
+
+.logo {
+  height: 80px;
+  filter: drop-shadow(0 0 4px var(--accent));
+}
+.logo {
+  margin-top: 10px;  /* negative = moves UP */
+}
+
+/* NAVIGATION */
+nav {
+  display: flex;
+  justify-content: center; /* CENTER NAV container */
+padding-left: 1200px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 40px; /* spacing between items */
+}
+
+.nav-links {
+  margin-top: -50px;  /* positive = moves DOWN */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-light);
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+/* HERO SECTION */
+.hero {
+  height: 100vh;
+  width: 100%;
+  background: url("IMG_4597.JPG") center center / cover no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 8%;
+  text-align: left;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  animation: fadeInUp 1.5s ease-out;
+}
+
+.hero-title {
+  font-size: 4.2rem;
+  margin-bottom: 20px;
+}
+
+.hero-subtitle {
+  font-size: 1.4rem;
+  line-height: 1.5;
+  margin-bottom: 40px;
+}
+
+.hero-btn {
+  padding: 15px 40px;
+  border: 2px solid white;
+  border-radius: 40px;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  transition: 0.3s;
+}
+
+.hero-btn:hover {
+  background: white;
+  color: black;
+}
+
+/* REGULAR SECTIONS (not full screen anymore) */
+.section {
+  padding: 120px 20px;
+  text-align: center;
+}
+
+/* ABOUT section should fill entire screen */
+#about {
+  min-height: 100vh;      /* full page height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 20px;        /* keep your horizontal padding */
+}
+
+
+.dark {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* SCHEDULE */
+.schedule-list {
+  list-style: none;
+  font-size: 1.2rem;
+  line-height: 2;
+}
+
+/* BUTTON */
+.btn {
+  padding: 12px 25px;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: var(--accent);
+  color: black;
+}
+
+/* CONTACT SECTION */
+.contact-section {
+    padding: 1px 40px;
+    text-align: center;
+    background: #0b0215; /* deep purple-black */
+    color: #e8d4ff; /* soft lavender */
+    font-family: 'Inter', sans-serif;
+}
+
+.contact-section h2 {
+    font-size: 3rem;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+    color: #d8b4ff;
+    text-transform: uppercase;
+}
+
+.contact-info {
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+}
+
+.contact-info p {
+    margin: 18px 0;
+}
+
+.contact-info a {
+    color: #c084fc;
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity 0.3s ease;
+}
+
+.contact-info a:hover {
+    opacity: 0.7;
+}
+
+
+
+/* EVENTS */
+.events-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.event-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.event-card img {
+  width: 100%;
+  border-radius: 10px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.event-card h3 {
+  margin-top: 15px;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: var(--deep-purple);
+}
+
+/* ANIMATION */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* FESTIVAL SECTION */
+.festival-section {
+  height: 100vh; /* full screen */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px;
+  background: #0c0614; /* matches your dark theme */
+  color: #fff;
+}
+
+.festival-content {
+  display: flex;
+  width: 100%;
+  max-width: 1400px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+}
+
+.festival-left {
+  width: 50%;
+}
+
+.festival-left h2 {
+  font-size: 2.4rem;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.festival-left h3 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.festival-left p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+/* RIGHT SIDE IMAGES */
+.festival-right {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.festival-image {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+/* SLIDER CONTAINER */
+.festival-slider {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+/* INDIVIDUAL SLIDES */
+.festival-slider .slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: slideFade 15s infinite;
+  left: 0;
+}
+
+/* Give each slide a different animation delay */
+.festival-slider .slide:nth-child(1) { animation-delay: 0s; }
+.festival-slider .slide:nth-child(2) { animation-delay: 3s; }
+.festival-slider .slide:nth-child(3) { animation-delay: 6s; }
+.festival-slider .slide:nth-child(4) { animation-delay: 9s; }
+.festival-slider .slide:nth-child(5) { animation-delay: 12s; }
+
+/* KEYFRAMES: smoother crossfade + side movement */
+@keyframes slideFade {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  25% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  35% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+}
+/* ============================
+   WEEKLY SCREENINGS (FILM STRIP)
+   ============================ */
+
+.screenings-section {
+  height: 100vh;                       /* full screen */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0b0214;                 /* keep your dark theme */
+  padding: 0 24px;
+}
+
+/* wrapper holds two columns (info left, strip right) */
+.screenings-wrapper {
+  width: 100%;
+  max-width: 1400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+  padding: 40px 0;
+  box-sizing: border-box;
+}
+
+/* ---------------------------
+   LEFT — info (on the left of strip)
+   --------------------------- */
+.screenings-info {
+  flex: 1 1 480px;
+  max-width: 560px;
+  text-align: left;       /* left aligned text (near the strip) */
+  padding-right: 30px;
+  color: #e2d4ff;
+  animation: fadeInUp .9s ease-out both;
+}
+
+.screenings-info h2 {
+  font-size: 3rem;
+  letter-spacing: 3px;
+  margin: 0 0 22px 0;
+  color: #e8d1ff;
+  text-transform: uppercase;
+}
+
+.screenings-info .highlight {
+  font-size: 1.5rem;
+  margin-bottom: 24px;
+  color: #f5e8ff;
+  font-weight: 700;
+}
+
+.screenings-info p {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #dcd0ff;
+}
+
+/* ---------------------------
+   RIGHT — film strip
+   --------------------------- */
+.film-strip {
+  flex: 0 0 360px;          /* wider strip */
+  height: 86vh;             /* tall but leaves small top/bottom margins */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #030203 0%, #060305 100%);
+  border-left: 12px solid rgba(58,34,86,0.9);
+  border-right: 12px solid rgba(58,34,86,0.9);
+  box-shadow:
+    0 0 40px rgba(150, 80, 255, 0.25),
+    inset 0 0 40px rgba(255,255,255,0.02);
+  border-radius: 6px;
+}
+
+/* sprockets (perforated holes) left & right */
+.film-strip::before,
+.film-strip::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 26px;
+  z-index: 5;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.06) 0 24px,
+    rgba(255,255,255,0.0) 24px 48px
+  );
+  opacity: 0.22;
+  pointer-events: none;
+}
+
+.film-strip::before { left: -26px; transform: translateX(-2px); }
+.film-strip::after  { right: -26px; transform: translateX(2px); }
+
+/* reel content stacking vertically; duplicated set allows seamless loop */
+.film-reel {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  padding: 12px 0;
+  width: 100%;
+  box-sizing: border-box;
+
+  /* start the reel slightly shifted up (we animate to 0 to move downward) */
+  transform: translateY(-50%);
+  /* SLOW ANIMATION: change duration here (seconds) */
+  animation: filmScroll 90s linear infinite;
+}
+
+/* poster images — BIGGER and centered */
+.film-reel img {
+  width: 80%;                 /* larger poster size inside the strip */
+  display: block;
+  margin: 0 auto;             /* horizontally center within strip */
+  border-radius: 6px;
+  object-fit: cover;
+  box-shadow: 0 16px 30px rgba(0,0,0,0.6), 0 0 18px rgba(150,80,255,0.06);
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+/* film reel movement: from -50% -> 0 (downwards) */
+@keyframes filmScroll {
+  0%   { transform: translateY(-50%); }
+  100% { transform: translateY(0%); }
+}
+
+/* subtle projector flicker to evoke vintage cinema */
+.film-strip {
+  animation: stripFlicker 5s infinite steps(20, end);
+}
+
+@keyframes stripFlicker {
+  0%, 100% { filter: brightness(1); }
+  80% { filter: brightness(0.96); }
+  85% { filter: brightness(0.92); }
+  90% { filter: brightness(0.98); }
+}
+
+/* small glow on hover (optional) */
+.film-strip:hover {
+  box-shadow:
+    0 0 55px rgba(160, 100, 255, 0.28),
+    inset 0 0 40px rgba(255,255,255,0.02);
+  transform: translateY(-2px);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+/* fade-in animation for the left info */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------------------------
+   RESPONSIVE
+   --------------------------- */
+@media (max-width: 980px) {
+  .screenings-wrapper { gap: 36px; padding: 30px; }
+  .film-strip { flex: 0 0 260px; height: 76vh; }
+  .film-reel img { width: 86%; }
+  .screenings-info h2 { font-size: 2.4rem; }
+}
+
+@media (max-width: 720px) {
+  /* stack: text then strip */
+  .screenings-wrapper { flex-direction: column-reverse; gap: 24px; }
+  .film-strip { width: 80%; height: 48vh; order: 2; border-left: 10px solid rgba(58,34,86,0.9); border-right: 10px solid rgba(58,34,86,0.9); }
+  .screenings-info { text-align: center; padding: 0 12px; order: 1; }
+  .film-reel { animation-duration: 50s; } /* a bit faster on smaller screens */
+}
+.film-strip {
+  position: relative;
+  padding: 0 60px; /* makes space for the frame */
+}
+
+.film-strip::before,
+.film-strip::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 50px;
+  height: 100%;
+  background: repeating-linear-gradient(
+    to bottom,
+    #1a1a1a 0px,
+    #1a1a1a 25px,
+    #444 25px,
+    #444 45px
+  );
+  border-left: 3px solid #000;
+  border-right: 3px solid #000;
+  filter: drop-shadow(0 0 10px rgba(150, 0, 255, 0.5));
+  opacity: 0.85;
+  z-index: 10;
+}
+
+.film-strip::before {
+  left: 0;
+  border-radius: 5px 0 0 5px;
+}
+
+.film-strip::after {
+  right: 0;
+  border-radius: 0 5px 5px 0;
+}
+/* -------------------------------------------------- */
+/* REALISTIC SPROCKET HOLES — SAFE VERSION           */
+/* (Does not affect poster sizes or film-strip width) */
+/* -------------------------------------------------- */
+
+.film-strip {
+  position: relative;
+  overflow: hidden; /* keeps everything inside */
+}
+
+/* Create spracket-hole vertical borders */
+.film-strip::before,
+.film-strip::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 35px;             /* safe small width */
+  pointer-events: none;
+  z-index: 5;
+  background-color: #1b1b1b;
+  opacity: 0.9;
+
+  /* sprocket hole pattern */
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 22px,
+    #000 22px,
+    #000 60px
+  );
+  background-size: 100% 80px;
+
+  box-shadow: inset 0 0 8px rgba(0,0,0,0.9);
+}
+
+/* Left edge */
+.film-strip::before {
+  left: 0; /* attaches directly to the inside edge */
+}
+
+/* Right edge */
+.film-strip::after {
+  right: 0; /* attaches directly to the inside edge */
+}
+
+/* ----------------------------- */
+/*         ABOUT SECTION         */
+/* ----------------------------- */
+
+.about-section {
+  position: relative;
+  height: 100vh !important;       /* FULL PAGE */
+  width: 100%;
+  padding-top: 160px;             /* pushes down under your fixed header */
+  padding-bottom: 80px;
+
+  background: #0b0215;           
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+  color: #e8d4ff;
+  font-family: 'Inter', sans-serif;
+}
+
+.about-content {
+  max-width: 1100px;
+  padding: 0 40px;
+}
+
+.about-section h2 {
+  font-size: 3.2rem;
+  letter-spacing: 3px;
+  margin-bottom: 35px;
+  color: #d8b4ff;
+  text-transform: uppercase;
+}
+
+.about-section p {
+  font-size: 1.5rem;
+  line-height: 2.4rem;
+  color: #e8d4ff;
+}
+
+/* ------------------------------------------------ */
+/* --------------   ABOUT OVERRIDE   -------------- */
+/* Small, safe override placed LAST so nothing else */
+/* in the stylesheet overrides the full-screen about */
+/* ------------------------------------------------ */
+
+.about-section {
+  /* make it truly centered vertically and horizontally */
+  height: calc(100vh - 100px);   /* subtract header area so it doesn't get hidden */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.about-content {
+  max-width: 1000px;
+}
